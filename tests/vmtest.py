@@ -1,14 +1,11 @@
 """Testing tools for byterun."""
 
-from __future__ import print_function
-
 import dis
+from io import StringIO
 import sys
 import textwrap
 import types
 import unittest
-
-import six
 
 from byterun.pyvm2 import VirtualMachine, VirtualMachineError
 
@@ -44,7 +41,7 @@ class VmTestCase(unittest.TestCase):
 
         # Run the code through our VM.
 
-        vm_stdout = six.StringIO()
+        vm_stdout = StringIO()
         if CAPTURE_STDOUT:              # pragma: no branch
             sys.stdout = vm_stdout
         vm = VirtualMachine()
@@ -69,7 +66,7 @@ class VmTestCase(unittest.TestCase):
 
         # Run the code through the real Python interpreter, for comparison.
 
-        py_stdout = six.StringIO()
+        py_stdout = StringIO()
         sys.stdout = py_stdout
 
         py_value = py_exc = None

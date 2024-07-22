@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='Byterun',
@@ -10,5 +10,4 @@ setup(
     author_email='ned@nedbatchelder.com',
     url='http://github.com/nedbat/byterun',
     packages=['byterun'],
-    install_requires=['six'],
-    )
+)
